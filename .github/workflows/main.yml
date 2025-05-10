@@ -35,3 +35,9 @@ jobs:
 
     - name: Apply Terraform
       run: terraform apply -auto-approve
+    
+    - name: Wait for 5 minutes before destruction
+      run: sleep 300  # 300 seconds = 5 minutes
+
+    - name: Destroy Terraform
+      run: terraform destroy -auto-approve
